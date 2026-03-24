@@ -1,28 +1,17 @@
-import { StyleSheet, Text, View } from "react-native";
+import useTheme from "@/hook/useTheme";
+import { Text, TouchableOpacity, View } from "react-native";
 
 export default function Index() {
+  const { toggleTheme } = useTheme();
   return (
-    <View
-      style={styles.contenedor}
-    >
-      <Text>Edita el archivo index.tsx para editar esta pantalla.</Text>
-      <Text style={styles.texto}>Aprende a programar</Text>
+    <View    >
+      <Text>Edita el archivo index.tsx. para editar esta pantalla.</Text>
+      <Text>Aprende a programar</Text>
+      <TouchableOpacity onPress={toggleTheme}>
+        <Text>Cambiar tema</Text>
+      </TouchableOpacity>
     </View>
   );
 }
 
 
-const styles = StyleSheet.create({
-  contenedor: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
-  },
-  texto: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#333",
-  }
-})
