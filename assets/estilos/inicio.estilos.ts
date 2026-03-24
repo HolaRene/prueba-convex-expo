@@ -2,7 +2,7 @@
 import { ColorScheme } from "@/hook/useTheme";
 import { StyleSheet } from "react-native";
 
-export const createHomeStyles = (colors: ColorScheme) => {
+export const crearEstilosdeInicio = (colors: ColorScheme) => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,

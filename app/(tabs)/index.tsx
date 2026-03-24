@@ -1,37 +1,25 @@
-import useTheme, { ColorScheme } from "@/hook/useTheme";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { crearEstilosdeInicio } from "@/assets/estilos/inicio.estilos";
+import Cabecera from "@/components/Cabecera";
+import useTheme from "@/hook/useTheme";
+import { LinearGradient } from 'expo-linear-gradient';
+import { StatusBar, Text, TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   // Tema y estilos 
   const { toggleTheme, colors } = useTheme();
-  const estilos = crearEstilos(colors);
-
+  const estilosdeInicio = crearEstilosdeInicio(colors);
   return (
-    <View style={estilos.contenedor}>
-      <Text style={estilos.contenido}>Bienvenido a mi aplicación.</Text>
-      <Text style={estilos.contenido}>Aprende a programar</Text>
-      <TouchableOpacity onPress={toggleTheme}>
-        <Text style={estilos.contenido}>Cambiar tema</Text>
-      </TouchableOpacity>
-
-    </View>
+    <LinearGradient colors={colors.gradients.background} style={estilosdeInicio.container}>
+      <StatusBar barStyle={colors.statusBarStyle} />
+      <SafeAreaView style={estilosdeInicio.safeArea}>
+        <Cabecera />
+        <Text>Aprende a programar</Text>
+        <TouchableOpacity onPress={toggleTheme}>
+          <Text >Cambiar tema</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
+    </LinearGradient>
   );
-}
-
-const crearEstilos = (colors: ColorScheme) => {
-  const styles = StyleSheet.create({
-    contenedor: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 10,
-      backgroundColor: colors.bg
-    },
-    contenido: {
-      fontSize: 22,
-      color: colors.text,
-    }
-  })
-  return styles;
 }
 
