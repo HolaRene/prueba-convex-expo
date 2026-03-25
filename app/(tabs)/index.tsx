@@ -1,8 +1,9 @@
 import { crearEstilosdeInicio } from "@/assets/estilos/inicio.estilos";
 import Cabecera from "@/components/Cabecera";
+import InputTarea from "@/components/InputTarea";
 import useTheme from "@/hook/useTheme";
 import { LinearGradient } from 'expo-linear-gradient';
-import { StatusBar, Text, TouchableOpacity } from "react-native";
+import { StatusBar } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -14,10 +15,7 @@ export default function Index() {
       <StatusBar barStyle={colors.statusBarStyle} />
       <SafeAreaView style={estilosdeInicio.safeArea}>
         <Cabecera />
-        <Text>Aprende a programar</Text>
-        <TouchableOpacity onPress={toggleTheme}>
-          <Text >Cambiar tema</Text>
-        </TouchableOpacity>
+        <InputTarea />
       </SafeAreaView>
     </LinearGradient>
   );

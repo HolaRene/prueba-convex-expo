@@ -32,8 +32,6 @@ const Cabecera = () => {
                         {tareasCompletadas} de {totalTareas} completadas
                     </Text>
                 </View>
-
-
             </View>
             <View style={estilosdeInicio.progressContainer}>
                 <View style={estilosdeInicio.progressBarContainer}>
