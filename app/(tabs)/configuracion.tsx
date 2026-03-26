@@ -1,4 +1,6 @@
 import { crearEstilosdeInicio } from '@/assets/estilos/inicio.estilos';
+import BarradeProgreso from '@/components/BarradeProgreso';
+import Preferencia from '@/components/Preferencia';
 import useTheme from '@/hook/useTheme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -11,7 +13,7 @@ function Configuracion() {
     const [notificacionHabilitada, setNotificacionHabilitada] = useState(false);
 
     // Tema y estilos 
-    const { colors, modeOscuro, toggleTheme } = useTheme();
+    const { colors } = useTheme();
     const estilosdeConfiguracion = crearEstilosdeInicio(colors);
 
 
@@ -30,7 +32,8 @@ function Configuracion() {
                     flex: 1,
                 }}
                     showsVerticalScrollIndicator={false}>
-
+                    <BarradeProgreso />
+                    <Preferencia />
                 </ScrollView>
             </SafeAreaView>
         </LinearGradient>
